@@ -1,17 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import ProfileCard from './ProfileCard';
+import SwipeYesOrNo from './SwipeYesOrNo';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const datingProfiles = [
+  {
+    name: "Melinda",
+    age: "27",
+    picture: "https://lanecdr.org/wp-content/uploads/2019/08/placeholder.png"
+  },
+  {
+    name: "Richard",
+    age: "44",
+    picture: "https://lanecdr.org/wp-content/uploads/2019/08/placeholder.png"
+  }
+]
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+  return (
+    <>
+    <h1>Hello World</h1>
+      <ProfileCard matches={datingProfiles}/>
+    </>
+  )
+};
+
+ReactDOM.render(<App />, document.querySelector('#root'))
