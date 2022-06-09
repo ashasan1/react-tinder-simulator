@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import GenerateUsername from './GenerateUsername';
 import ProfileCard from './ProfileCard';
+import Header from './Header';
+import index from './index.css'
 
 const datingProfiles = [
   {
@@ -80,13 +83,36 @@ const datingProfiles = [
     datingQuestions: []
   }
 
-]
+];
 
 const App = () => {
   return (
     <>
     <h1>Hello World</h1>
-      <ProfileCard matches={datingProfiles}/>
+    <div className="container">
+      <div className="row">
+        <div className="col md">
+          <Header />
+        </div>
+      </div>
+      <div className="row">
+      <div className="col md">
+          <ProfileCard matches={datingProfiles}/>
+          <GenerateUsername />
+        </div>
+        <div className="col md">
+          <ProfileCard matches={datingProfiles}/>
+          <GenerateUsername />
+        </div>
+        <div className="col md">
+          <ProfileCard matches={datingProfiles}/>
+          <GenerateUsername />
+        </div>
+      </div>
+
+      
+    </div>
+     
     </>
   )
 };

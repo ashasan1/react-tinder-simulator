@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ChosenMatch from "./ChosenMatch";
+import index from './index.css'
 
 const ProfileCard = (props) => {
     console.log(props.matches.length);
@@ -11,18 +12,18 @@ const [currentMatch, setCurrentMatch] = React.useState(0);
         return (
             <>
             <div>
-                
+
                 <div>
-                <img style= {{ maxWidth: "400px" }} src={props.matches[currentMatch].picture}/>
+                <img className="profile-picture" style= {{ maxWidth: "400px" }} src={props.matches[currentMatch].picture}/>
                 <h1>Name:{props.matches[currentMatch].name}</h1>
                 <h1>Age:{props.matches[currentMatch].age}</h1>
                 <h2>{currentMatch}</h2>
                 </div>
 
-                <button onClick={() => {
+                <button className="yesno-btn btn" onClick={() => {
                     setMatched(true);
                 }}>Yes</button>
-                <button onClick={() => {
+                <button className="yesno-btn btn"onClick={() => {
                     setCurrentMatch(currentMatch + 1);
                     if (currentMatch === props.matches.length - 1) {
                         setCurrentMatch(0);
